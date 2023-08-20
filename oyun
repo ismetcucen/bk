@@ -1,0 +1,45 @@
+def ana_menu():
+    print("Hoş geldiniz!")
+    print("1. Oyuna Başla")
+    print("2. Çıkış")
+    secim = input("Bir seçenek seçin: ")
+    
+    if secim == "1":
+        oyun_basla()
+    elif secim == "2":
+        print("Oyundan çıkılıyor.")
+    else:
+        print("Geçersiz bir seçenek girdiniz.")
+        ana_menu()
+
+def oyun_basla():
+    print("Macera başlıyor!")
+    print("Bir ormanda yürüyorsunuz ve iki yol arasında seçim yapmanız gerekiyor.")
+    print("1. Sağa git")
+    print("2. Sola git")
+    secim = input("Bir yol seçin: ")
+    
+    if secim == "1":
+        print("Sağa gittiniz ve büyük bir nehre geldiniz.")
+        print("Nehri geçmek için bir köprü seçebilir veya yüzerek geçmeyi deneyebilirsiniz.")
+        print("1. Köprüyü seç")
+        print("2. Yüzerek geçmeye çalış")
+        secim = input("Bir seçenek seçin: ")
+        
+        if secim == "1":
+            print("Köprüyü seçtiniz ancak köprü çöktü ve nehrin sularına düştünüz. Oyun bitti!")
+        elif secim == "2":
+            print("Yüzerek nehrin karşı kıyısına geçmeyi başardınız. Tebrikler, macera devam ediyor!")
+    elif secim == "2":
+        print("Sola gittiniz ve karanlık bir mağaraya geldiniz.")
+        print("Mağarada ilerlerken tehlikeli bir yaratıkla karşılaştınız.")
+        print("1. Savaşmaya çalış")
+        print("2. Geri dön")
+        secim = input("Bir seçenek seçin: ")
+        
+        if secim == "1":
+            print("Yaratıkla savaşırken ağır yaralandınız. Oyun bitti!")
+        elif secim == "2":
+            print("Korkarak mağaradan geri döndünüz. Maceraya başlamadan önce daha iyi hazırlanmalısınız.")
+
+ana_menu()
