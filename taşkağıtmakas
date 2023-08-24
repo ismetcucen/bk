@@ -1,0 +1,32 @@
+import random
+
+
+def kazanan_secimi(oyuncu, bilgisayar):
+    if oyuncu == bilgisayar:
+        return "Berabere"
+    elif (oyuncu == "taş" and bilgisayar == "makas") or \
+            (oyuncu == "kağıt" and bilgisayar == "taş") or \
+            (oyuncu == "makas" and bilgisayar == "kağıt"):
+        return "Oyuncu"
+    else:
+        return "Bilgisayar"
+
+
+while True:
+    print("Taş-Kağıt-Makas Oyunu")
+    print("Seçenekler: taş, kağıt, makas, çıkış")
+
+    oyuncu_secimi = input("Seçiminizi yapın: ").lower()
+    if oyuncu_secimi == "çıkış":
+        print("Oyundan çıkılıyor.")
+        break
+
+    if oyuncu_secimi not in ["taş", "kağıt", "makas"]:
+        print("Geçersiz seçim! Lütfen taş, kağıt veya makas seçin.")
+        continue
+
+    bilgisayar_secimi = random.choice(["taş", "kağıt", "makas"])
+    print(f"Bilgisayarın seçimi: {bilgisayar_secimi}")
+
+    sonuc = kazanan_secimi(oyuncu_secimi, bilgisayar_secimi)
+    print(f"Sonuç: {sonuc}\n")
