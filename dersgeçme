@@ -1,0 +1,20 @@
+def ders_gecme_durumu(sınav1, sınav2, sözlü1, sözlü2):
+    # Notların ortalamasını hesapla
+    ortalama = (sınav1 + sınav2 + sözlü1 + sözlü2) / 4
+
+    # Ortalama 50'nin üstündeyse geçer, aksi halde kalır
+    if ortalama >= 50:
+        return "Geçti"
+    else:
+        return "Kaldı"
+
+
+# Kullanıcıdan notları al
+sınav1_notu = float(input("1. sınav notunu girin: "))
+sınav2_notu = float(input("2. sınav notunu girin: "))
+sözlü1_notu = float(input("1. sözlü notunu girin: "))
+sözlü2_notu = float(input("2. sözlü notunu girin: "))
+
+# Durumu kontrol et ve sonucu yazdır
+durum = ders_gecme_durumu(sınav1_notu, sınav2_notu, sözlü1_notu, sözlü2_notu)
+print("Ders durumu:", durum)
