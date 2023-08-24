@@ -1,0 +1,58 @@
+import random
+
+
+def tahta_olustur(boyut):
+    tahta = []
+    for _ in range(boyut):
+        tahta.append(["O"] * boyut)
+    return tahta
+
+
+def tahtayi_goster(tahta):
+    for satir in tahta:
+        print(" ".join(satir))
+
+
+def rastgele_satir(tahta):
+    return random.randint(0, len(tahta) - 1)
+
+
+def rastgele_sutun(tahta):
+    return random.randint(0, len(tahta[0]) - 1)
+
+
+def oyun():
+    tahta_boyutu = 5
+    gemi_boyutu = 2
+    tahta = tahta_olustur(tahta_boyutu)
+
+    print("Amiral Battı Oyununa Hoş Geldiniz!")
+    tahtayi_goster(tahta)
+
+    gemi_satir = rastgele_satir(tahta)
+    gemi_sutun = rastgele_sutun(tahta)
+
+    for deneme in range(4):
+        tahmin_satir = int(input("Tahmin satırını girin (0-4): "))
+        tahmin_sutun = int(input("Tahmin sütununu girin (0-4): "))
+
+        if tahmin_satir == gemi_satir and tahmin_sutun == gemi_sutun:
+            print("Tebrikler! Gemi vuruldu!")
+            tahta[tahmin_satir][tahmin_sutun] = "X"
+            tahtayi_goster(tahta)
+            break
+        else:
+            if 0 <= tahmin_satir < tahta_boyutu and 0 <= tahmin_sutun < tahta_boyutu:
+                if tahta[tahmin_satir][tahmin_sutun] == "X":
+                    print("Bu noktayı daha önce denediniz.")
+                else:
+                    print("Gemi burada değil.")
+                    tahta[tahmin_satir][tahmin_sutun] = "X"
+                    tahtayi_goster(tahta)
+            else:
+                print("Geçersiz tahmin! Tahta dışında bir konum girdiniz.")
+
+    print(f"Gemi konumu: Satır {gemi_satir}, Sütun {gemi_sutun}")
+
+
+oyun()
