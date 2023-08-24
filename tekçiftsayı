@@ -1,0 +1,12 @@
+def tek_mi_cift_mi(sayi):
+    if sayi % 2 == 0:
+        return "Çift"
+    else:
+        return "Tek"
+
+# Kullanıcıdan sayıyı al
+girilen_sayi = int(input("Bir sayı girin: "))
+
+# Sayının tek mi çift mi olduğunu kontrol et ve sonucu yazdır
+sonuc = tek_mi_cift_mi(girilen_sayi)
+print(f"Girilen sayı {sonuc} bir sayıdır.")
