@@ -1,0 +1,52 @@
+import math
+
+
+def kare_alan(kenar):
+    return kenar ** 2
+
+
+def dikdortgen_alan(uzunluk, genislik):
+    return uzunluk * genislik
+
+
+def ucgen_alan(taban, yukseklik):
+    return (taban * yukseklik) / 2
+
+
+def daire_alan(yaricap):
+    return math.pi * (yaricap ** 2)
+
+
+while True:
+    print("Alan Hesaplama Seçenekleri:")
+    print("1. Kare")
+    print("2. Dikdörtgen")
+    print("3. Üçgen")
+    print("4. Daire")
+    print("5. Çıkış")
+
+    secim = input("Hangi şeklin alanını hesaplamak istiyorsunuz? (1/2/3/4/5): ")
+
+    if secim == '1':
+        kenar = float(input("Kare kenar uzunluğunu girin: "))
+        alan = kare_alan(kenar)
+        print(f"Kare alanı: {alan}")
+    elif secim == '2':
+        uzunluk = float(input("Dikdörtgen uzunluğunu girin: "))
+        genislik = float(input("Dikdörtgen genişliğini girin: "))
+        alan = dikdortgen_alan(uzunluk, genislik)
+        print(f"Dikdörtgen alanı: {alan}")
+    elif secim == '3':
+        taban = float(input("Üçgen taban uzunluğunu girin: "))
+        yukseklik = float(input("Üçgen yüksekliğini girin: "))
+        alan = ucgen_alan(taban, yukseklik)
+        print(f"Üçgen alanı: {alan}")
+    elif secim == '4':
+        yaricap = float(input("Daire yarıçapını girin: "))
+        alan = daire_alan(yaricap)
+        print(f"Daire alanı: {alan}")
+    elif secim == '5':
+        print("Programdan çıkılıyor.")
+        break
+    else:
+        print("Geçersiz seçim! Lütfen geçerli bir seçenek girin.")
