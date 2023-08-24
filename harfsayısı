@@ -1,0 +1,10 @@
+def harf_sayisi(metin):
+    harf_count = 0
+    for harf in metin:
+        if harf.isalpha():
+            harf_count += 1
+    return harf_count
+
+metin = input("Bir metin girin: ")
+sayi = harf_sayisi(metin)
+print("Metindeki harf sayısı:", sayi)
