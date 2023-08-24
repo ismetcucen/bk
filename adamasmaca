@@ -1,0 +1,44 @@
+def adam_asmaca():
+    kelime = "python"  # Oyun için seçilen kelime
+    tahminler = []  # Kullanıcının yaptığı tahminleri saklayacak liste
+    hatali_tahmin = 0  # Yanlış tahmin sayısı
+
+    while True:
+        harf = input("Bir harf tahmin edin: ").lower()
+
+        if len(harf) != 1 or not harf.isalpha():
+            print("Lütfen sadece bir harf girin.")
+            continue
+
+        if harf in tahminler:
+            print("Bu harfi zaten tahmin ettiniz.")
+            continue
+
+        tahminler.append(harf)
+
+        if harf in kelime:
+            print("Doğru tahmin!")
+        else:
+            hatali_tahmin += 1
+            print("Yanlış tahmin!")
+
+        # Doğru tahmin edilen harfleri ve boşlukları göster
+        durum = ""
+        for harf_kelime in kelime:
+            if harf_kelime in tahminler:
+                durum += harf_kelime
+            else:
+                durum += "_"
+        print(durum)
+
+        # Oyun durumunu kontrol et
+        if durum == kelime:
+            print("Tebrikler, kelimeyi buldunuz!")
+            break
+        elif hatali_tahmin == 6:
+            print("Üzgünüm, hakkınız bitti. Doğru kelime:", kelime)
+            break
+
+
+print("Adam Asmaca Oyununa Hoş Geldiniz!")
+adam_asmaca()
