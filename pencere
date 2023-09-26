@@ -1,0 +1,5 @@
+import tkinter
+pencere = tkinter.Tk()
+pencere.geometry("400x400")
+pencere.title("Alanya bahçeşehir Koleji")
+pencere.mainloop()
