@@ -1,0 +1,7 @@
+from tkinter import *
+pencere = Tk()
+pencere.geometry("200x100")
+pencere.title("Alanya Bahçeşehir")
+etiket =Label (text="BK Coding")
+etiket.pack()
+pencere.mainloop()
