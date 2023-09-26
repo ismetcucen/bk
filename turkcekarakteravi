@@ -1,0 +1,6 @@
+tr_harfler="ığüşçöİĞÜŞÇÖ"
+kullanici_adi = input("Kullanıcı Adı:")
+metin = "Türkçe karakter bulundu:{}"
+for harf in kullanici_adi:
+    if harf in tr_harfler:
+        print(metin.format(harf))
