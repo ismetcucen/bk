@@ -1,0 +1,22 @@
+buyukHarfler = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVWXYZ"
+kucukHarfler = "abcçdefgğhıijklmnoöprsştuüvwxyz"
+rakamlar = "0123456789"
+ozelKarakterler = ".,*-_?"
+bh_sayac = 0
+kh_sayac = 0
+r_sayac = 0
+ok_sayac = 0
+sifre = input("Lütfen şifrenizi giriniz:")
+for harf in sifre:
+    if harf in buyukHarfler:
+        bh_sayac+=1
+    if harf in kucukHarfler:
+        kh_sayac+=1
+    if harf in rakamlar:
+        r_sayac+=1
+    if harf in ozelKarakterler:
+        ok_sayac+=1
+if (bh_sayac == 0 or kh_sayac == 0 or r_sayac == 0 or ok_sayac == 0):
+    print("Şifre güvenliği zayıf")
+else:
+    print("Şifre güvenliği yüksek")
