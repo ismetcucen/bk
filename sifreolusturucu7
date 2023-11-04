@@ -15,8 +15,8 @@ def generate_password(length,level, output=[]):
 
 print(("-" * 30) + "\n Sifre Olusturucu\n" + ("-" * 30))
 
-password_length = int(raw_input("Karakter Uzunlugu: "))
-password_level = int(raw_input("Zorluk Seviyesi: "))
+password_length = int(input("Karakter Uzunlugu: "))
+password_level = int(input("Zorluk Seviyesi: "))
 
 password = generate_password(password_length,password_level)
 print("\nSifreniz : {}".format(password))
