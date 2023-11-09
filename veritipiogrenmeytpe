@@ -1,0 +1,8 @@
+a = 20
+b = 13.5
+c = "20"
+d = "yirmi"
+print (type(a))
+print (type(b))
+print (type(c))
+print (type(d))
