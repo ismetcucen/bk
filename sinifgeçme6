@@ -1,0 +1,34 @@
+from tkinter import *
+from tkinter import messagebox
+pencere = Tk()
+pencere.geometry("240x140")
+pencere.title("Alanya Bahçeşehir Koleji")
+def hesapla():
+    not1 = int(sinav1Entry.get())
+    not2 = int(sinav2Entry.get())
+    ortalama = (not1 + not2) / 2
+    if ortalama < 45:
+        messagebox.showinfo("Sınıf geçme durumu", "Ortalamanız:" + str(ortalama)+"Başarısız")
+    elif (ortalama >=45) and (ortalama < 55):
+        messagebox.showinfo("Sınıf geçme durumu", "Ortalamanız:" + str(ortalama)+"Geçer")
+    elif (ortalama >=55) and (ortalama < 70):
+        messagebox.showinfo("Sınıf geçme durumu", "Ortalamanız:" + str(ortalama)+"Orta")
+    elif (ortalama >=70) and (ortalama < 85):
+        messagebox.showinfo("Sınıf geçme durumu", "Ortalamanız:" + str(ortalama)+"İyi")
+    elif (ortalama >=85) and (ortalama <= 100):
+        messagebox.showinfo("Sınıf geçme durumu", "Ortalamanız:" + str(ortalama)+"Pekiyi")
+
+        
+hesapFrame = LabelFrame(text="Ders Geçme Notu", width=220,height=120)
+hesapFrame.place(x=10,y=10)
+sinav1Etiket = Label (hesapFrame,text="1.Sınav")
+sinav1Etiket.place(x=10,y=10)
+sinav1Entry =Entry(hesapFrame)
+sinav1Entry.place(x=70,y=10)
+sinav2Etiket = Label (hesapFrame,text="2.Sınav")    
+sinav2Etiket.place(x=10,y=40)
+sinav2Entry = Entry(hesapFrame)
+sinav2Entry.place(x=70,y=40)
+btnHesapla =Button(hesapFrame,text ="Hesapla",command = hesapla)
+btnHesapla.place(x=155,y=70)
+pencere.mainloop()
